@@ -8,7 +8,7 @@ const pkg = JSON.parse(readFileSync(join(cwd(), 'package.json'), 'utf8'))
 // Get export paths from the "." export
 const exports = pkg.exports['.'] || pkg.exports
 
-export default {
+const config = {
   input: 'guest-js/index.ts',
   output: [
     {
@@ -32,3 +32,5 @@ export default {
     ...Object.keys(pkg.peerDependencies || {})
   ]
 }
+
+export default config
