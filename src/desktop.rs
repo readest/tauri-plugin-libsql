@@ -4,16 +4,6 @@ use tauri::{plugin::PluginApi, AppHandle, Runtime};
 
 use crate::models::*;
 
-/// Plugin configuration
-#[derive(Debug, Clone, Default)]
-pub struct Config {
-    /// Base path for relative database paths. Defaults to current working directory.
-    pub base_path: Option<PathBuf>,
-    /// Default encryption configuration for all databases.
-    /// Can be overridden per-database when loading.
-    pub encryption: Option<EncryptionConfig>,
-}
-
 pub fn init<R: Runtime, C: DeserializeOwned>(
     _app: &AppHandle<R>,
     _api: PluginApi<R, C>,

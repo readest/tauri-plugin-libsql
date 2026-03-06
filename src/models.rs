@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 use serde::{Deserialize, Serialize};
 
 /// Encryption configuration for database.
@@ -41,6 +43,16 @@ pub struct QueryResult {
     pub rows_affected: u64,
     /// Last inserted row ID
     pub last_insert_id: i64,
+}
+
+/// Plugin configuration
+#[derive(Debug, Clone, Default)]
+pub struct Config {
+    /// Base path for relative database paths. Defaults to current working directory.
+    pub base_path: Option<PathBuf>,
+    /// Default encryption configuration for all databases.
+    /// Can be overridden per-database when loading.
+    pub encryption: Option<EncryptionConfig>,
 }
 
 // Keep ping for backwards compatibility

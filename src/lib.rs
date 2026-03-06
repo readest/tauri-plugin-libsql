@@ -19,8 +19,6 @@ mod wrapper;
 pub use error::{Error, Result};
 pub use wrapper::DbInstances;
 
-/// Re-export Config for convenience
-pub use desktop::Config;
 /// Initializes the plugin with default configuration.
 pub fn init<R: Runtime>() -> TauriPlugin<R> {
     init_with_config(Config::default())
