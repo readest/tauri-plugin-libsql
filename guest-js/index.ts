@@ -35,6 +35,11 @@ export interface LoadOptions {
    * Required when `syncUrl` is set or when `path` is a remote URL.
    */
   authToken?: string;
+  /**
+   * Optional list of experimental features to enable.
+   * @example ["index_method"] // enables FTS and vector search
+   */
+  experimental?: string[];
 }
 
 /** Result of an execute operation */
